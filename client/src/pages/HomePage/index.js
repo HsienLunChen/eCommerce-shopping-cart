@@ -7,7 +7,23 @@ import {
 
 import Product from '../../components/Product'
 
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getProducts as listProducts } from '../../redux/actions/productActions';
+
 const HomePage = () => {
+
+  const dispatch = useDispatch();
+  const getProducts = useSelector((state) => state.getProducts);
+
+  const { products, loading, error }  = getProducts;
+
+  useEffect(() => {
+    dispatch((listProducts()));
+  }, [dispatch]);
+
+
   return (
     <>
       <HomeScreen>
@@ -16,41 +32,18 @@ const HomePage = () => {
         </HomeTitle>
 
         <HomeProducts>
-          <Product
-            name='product 1'
-            desc='this is product 1'
-            price='45'
-            img="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-            productId='1'
-          />
-          <Product
-            name='product 1'
-            desc='this is product 1'
-            price='45'
-            img="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-            productId='1'
-          />
-          <Product
-            name='product 1'
-            desc='this is product 1'
-            price='45'
-            img="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-            productId='1'
-          />
-          <Product
-            name='product 1'
-            desc='this is product 1'
-            price='45'
-            img="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-            productId='1'
-          />
-          <Product
-            name='product 1'
-            desc='this is product 1'
-            price='45'
-            img="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-            productId='1'
-          />
+          {loading ? (<h2>Loading</h2>) : error ? (<h2>{error}</h2>) : (
+            products.map((product) => (
+              <Product
+                key={product._id}
+                name={product.name}
+                desc={product.description}
+                price={product.price}
+                img={product.img}
+                productId={product._id}
+              />
+            ))
+          )}
         </HomeProducts>
       </HomeScreen>
     </>

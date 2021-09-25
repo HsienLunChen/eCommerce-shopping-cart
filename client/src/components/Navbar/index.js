@@ -12,7 +12,15 @@ import {
   CartNumber,
 } from './NavbarElements';
 
+import { useSelector } from 'react-redux';
+
 const Navbar = () => {
+  const cart = useSelector((state) => state.cart)
+  const {cartItems} = cart;
+
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  };
   return (
     <>
       <Nav>
@@ -26,7 +34,7 @@ const Navbar = () => {
               <CartCount>
                 Cart
                 <CartNumber>
-                  0
+                  {getCartCount()}
                 </CartNumber>
               </CartCount>
             </NavLinkCart>

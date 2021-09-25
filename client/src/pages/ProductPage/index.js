@@ -1,5 +1,11 @@
 import React from 'react'
 
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { getProductDetail } from '../../redux/actions/productActions'
+import { addToCart } from '../../redux/actions/cartAction'
+
 import {
   ProductScreen,
   ScreenLeft,
@@ -16,38 +22,68 @@ import {
   RightBtn
 } from './ProductPageElements'
 
-const ProductPage = () => {
+const ProductPage = ({match, history}) => {
+  const [qty, setQty] = useState(1);
+   const dispatch = useDispatch();
+   const productDetail = useSelector((state) => state.getProductDetail);
+
+   const {loading, error, product} = productDetail;
+
+   useEffect(() => {
+     console.log("here")
+     console.log(match.params.id)
+    if (product && match.params.id !== product._id) {
+      dispatch(getProductDetail(match.params.id));
+    }
+   }, [dispatch, match, product]);
+
+   const addCartHandler = () => {
+     dispatch(addToCart(product._id, qty));
+     history.push("/cart");
+   }
+
   return (
     <>
       <ProductScreen>
-        <ScreenLeft>
-          <ScreenLeftImg>
-            <LeftImg src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"/>
-          </ScreenLeftImg>
+        {loading ? (<h2>Loading</h2>) : error ? (<h2>{error}</h2>) :
+        <>
+          <ScreenLeft>
+            <ScreenLeftImg>
+              <LeftImg src={product.img} alt={product.name}/>
+            </ScreenLeftImg>
 
-          <ScreenLeftInfo>
-            <LeftName>Product 1</LeftName>
-            <LeftP>Price: $409</LeftP>
-            <LeftP>Desc: 400</LeftP>
-          </ScreenLeftInfo>
-        </ScreenLeft>
+            <ScreenLeftInfo>
+              <LeftName>{product.name}</LeftName>
+              <LeftP>Price: ${product.price}</LeftP>
+              <LeftP>Descriptions: {product.description}</LeftP>
+            </ScreenLeftInfo>
+          </ScreenLeft>
 
-        <ScreenRight>
-          <RightInfo>
-            <RightP>Price: 40</RightP>
-            <RightP>Status: open</RightP>
-            <RightP>
-              Qty:
-              <RightSelect>
-                <RightOption value="1">1</RightOption>
-                <RightOption value="2">2</RightOption>
-                <RightOption value="3">3</RightOption>
-                <RightOption value="4">4</RightOption>
-              </RightSelect>
-            </RightP>
-            <RightBtn type="button">Add to Cart</RightBtn>
-          </RightInfo>
-        </ScreenRight>
+          <ScreenRight>
+            <RightInfo>
+              <RightP>Total Price: ${parseInt(product.price)*qty}</RightP>
+              <RightP>Status: {
+                  product.countInStock > 0 ? "In Stock" : "Out of Stock"
+                }</RightP>
+              <RightP>
+                Qty:
+                <RightSelect
+                  value={qty}
+                  onChange={(e) => setQty(e.target.value)}
+                >
+                  {[...Array(product.countInStock).keys()].map((x) => (
+                    <RightOption key={x + 1} value={x + 1}>
+                      {x + 1}
+                    </RightOption>
+                  ))}
+                </RightSelect>
+              </RightP>
+              <RightBtn type="button" onClick={addCartHandler}>Add to Cart</RightBtn>
+            </RightInfo>
+          </ScreenRight>
+        </>
+        }
+
       </ProductScreen>
     </>
   )

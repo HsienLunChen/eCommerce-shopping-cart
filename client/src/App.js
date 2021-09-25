@@ -5,6 +5,8 @@ import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import Navbar from './components/Navbar';
 
+
+
 function App() {
   return (
     <Router >

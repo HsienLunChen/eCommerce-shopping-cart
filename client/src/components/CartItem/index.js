@@ -13,29 +13,39 @@ import {
   ItemIcon
 } from './CartElements'
 
-const CartItem = () => {
+const CartItem = ({item, qtyChangeHandler, removeFromCartHandler}) => {
+  console.log("item: " ,item)
   return (
     <>
       <CartWrapper>
         <CartImgWrapper>
-          <CartImg src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80">
-
-          </CartImg>
+          <CartImg src={item.img} />
         </CartImgWrapper>
-        <ItemLink to='/product/1'>
+        <ItemLink to={`/product/${item.product}`}>
           <LinkName>
-            Product 1
+            {item.name}
           </LinkName>
         </ItemLink>
         <ItemP>
-          $400
+          ${item.price}
         </ItemP>
 
-        <ItemSelect>
-          <ItemOption>1</ItemOption>
+        <ItemSelect
+          value={item.qty}
+          onChange={(e) => (
+            qtyChangeHandler(item.product, e.target.value)
+          )}
+        >
+          {[...Array(item.countInStock).keys()].map((x) => (
+          <ItemOption key={x + 1} value={x + 1}>
+            {x + 1}
+          </ItemOption>
+        ))}
         </ItemSelect>
 
-        <ItemBtn>
+        <ItemBtn onClick={() => {
+          removeFromCartHandler(item.product)
+        }}>
           <ItemIcon>
             X
           </ItemIcon>

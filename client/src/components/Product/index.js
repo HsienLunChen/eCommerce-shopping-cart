@@ -19,13 +19,13 @@ const Product = ( {
   return (
     <>
       <ProductContainer>
-        <ProductImg src={img}>
+        <ProductImg src={img} alt={name}>
         </ProductImg>
 
         <ProductInfo>
           <ProductName>{name}</ProductName>
-          <ProductDesc>{desc}</ProductDesc>
-          <ProductPrice>{price}</ProductPrice>
+          <ProductDesc>{desc.substring(0, 100)}</ProductDesc>
+          <ProductPrice>${price}</ProductPrice>
           <InfoBtn to={`/product/${productId}`}>View</InfoBtn>
         </ProductInfo>
       </ProductContainer>
