@@ -1,57 +1,57 @@
 const products = [
   {
-    name: "PlayStation 5",
+    name: "Martin D-28",
     img:
-      "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80",
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Sites-martin-master-catalog/default/dw77e28aa4/images/D-28/D-28_f.jpg?sw=600&sh=600&sm=fit",
     description:
-      "PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020 in Australia, Japan, New Zealand, North America, Singapore, and South Korea, and November 19, 2020 onwards in other major markets except China and India.",
-    price: 499,
+      "Sometimes innovation is in the details and this is certainly true with Martin’s re-imagined D-28. After nearly a century at the helm, and as the quintessential workhorse of music legends like Hank Williams, The Beatles, Johnny Cash, Neil Young, Bob Dylan, and so many more, Martin's legendary D-28 has been lovingly and artfully enhanced.",
+    price: 2999,
     countInStock: 15,
   },
   {
-    name: "Iphone 12",
+    name: "Martin HD-28",
     img:
-      "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80",
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Sites-martin-master-catalog/default/dwcd49675d/images/HD-28/HD-28_f.jpg?sw=600&sh=600&sm=fit",
     description:
-      "Welcome to a new era of iPhone. Beautifully bright 6.1-inch Super Retina XDR display.1 Ceramic Shield with 4x better drop performance.2 Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback. Powerful A14 Bionic chip. And new MagSafe accessories for easy attach and faster wireless charging.3 Let the fun begin.",
-    price: 1099,
+      "Classic herringbone, East Indian rosewood, ebony and Sitka spruce in the shape that started it all: the Dreadnought. Paired with our most comfortable neck, vintage appointments, scalloped, forward-shifted bracing, and a lifetime warranty. Powerful bottom end, rich tone, and strums that will fill the room—music history made new. Also available in Sunburst and Ambertone finish.",
+    price: 3199,
     countInStock: 10,
   },
   {
-    name: "Cannon EOS-1D",
+    name: "Martin 000-18",
     img:
-      "https://images.unsplash.com/photo-1519183071298-a2962feb14f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Sites-martin-master-catalog/default/dwb2489b10/images/000-18/000-18_f.jpg?sw=600&sh=600&sm=fit",
     description:
-      "The EOS-1D X combines speed with image quality, to create the next generation camera for professionals. Full frame 18 megapixel sensor with Dual “DIGIC 5+” processors sets the standard, and up to 12 frames per second shooting takes it beyond.",
-    price: 1300,
+      "Carrying a distinct vintage-inspired design and updated like the D-18 a few years ago, the redesigned 000-18 offers many of the features found in our pre-war era guitars. The 000-18, which has a beautiful aging toned top in Sitka spruce, is married with genuine mahogany back and sides. The body is edged with tortoise binding and complemented with a polished finish. The 24.9” short scale model’s neck features a modified low oval profile with Performing Artist taper, with a width of 1-3/4” at the nut and 2-5/32” string spacing for easy playability. Nickel open-geared tuners with butterbean knobs are found with a rosewood headplate, which displays a large old style Martin logo.",
+    price: 2499,
     countInStock: 5,
   },
   {
-    name: "Amazon Alexa",
+    name: "Martin OM-42",
     img:
-      "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Sites-martin-master-catalog/default/dw5f5cb5d8/images/OM-42/OM-42_f.jpg?sw=600&sh=600&sm=fit",
     description:
-      "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
-    price: 50,
-    countInStock: 25,
+      "The stylish design of the 40 Series adds panache to the classic tone and feel of East Indian rosewood back and sides, a Sitka spruce scalloped X-braced top, and hand-fit dovetail neck joint. Open geared tuners, antique white binding, polished gloss finish, a tortoise colored pickguard and abalone pearl inlay offer shimmer with exemplary tone. Long scale and a sleek modified low-oval neck with narrow taper mean strumming and picking for hours in comfort and bliss.",
+    price: 6199,
+    countInStock: 3,
   },
   {
-    name: "Audio Technica Headphones",
+    name: "Martin 0-18",
     img:
-      "https://images.unsplash.com/photo-1558756520-22cfe5d382ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Sites-martin-master-catalog/default/dw44ee7172/images/0-18/0-18_f.jpg?sw=600&sh=600&sm=fit",
     description:
-      "Outfitted with 45mm large-aperture dynamic drivers and an over-ear, closed-back design, the ATH-M50x headphones deliver clarity, deep bass, and extended bandwidth (15 Hz to 28 kHz) while isolating you from outside sounds.",
-    price: 233,
+      "A welcome addition to the Standard Series, the new 0-18 has a scallop-braced Sitka spruce top with mahogany back and sides that serve as the foundation for this concert sized model. The combination of a short expressive 24.9” scale with a modified low oval neck shape and the high performance parallel taper allows for easy action and fast playability. Open geared nickel tuners with phosphor bronze strings and an ebony fingerboard and bridge complete the look of this classic parlor guitar.",
+    price: 2499,
     countInStock: 4,
   },
   {
-    name: "JBL FLIP 4",
+    name: "Martin D-45",
     img:
-      "https://images.unsplash.com/photo-1564424224827-cd24b8915874?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80",
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Sites-martin-master-catalog/default/dw263d7367/images/D-45/D-45_f.jpg?sw=600&sh=600&sm=fit",
     description:
-      "JBL Flip 4 is the next generation in the award-winning Flip series; it is a portable Bluetooth speaker that delivers surprisingly powerful stereo sound. This compact speaker is powered by a 3000mAh rechargeable Li-ion battery that offers up to 12 hours of continuous, high-quality audio playtime.",
-    price: 140,
-    countInStock: 10,
+      "This decked out Dreadnought is the flagship model of the Standard Series. It is the most ornate of all the instruments, featuring hand inlaid pearl on the top, back, sides, and neck. Premium tonewoods and all of the advancements of the reimagined Standard Series such as forward shifted scalloped braces, antique white binding and a high performance neck. The guitar of choice for legends like Gene Autry and Neil Young, it’s the perfect guitar for any discerning collector or musician. Nothing says you’ve arrived like a D-45.",
+    price: 9499,
+    countInStock: 2,
   },
 ];
 

@@ -17,10 +17,11 @@ export const CartImgWrapper = styled.div`
 `
 
 export const CartImg = styled.img`
-  max-width: 300px;
+  max-width: 200px;
+  max-height:300px;
   @media screen and (max-width: 700px) {
     max-width: 150px;
-    width: 40vh;
+    max-height: 225px;
   }
 `
 
