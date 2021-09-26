@@ -21,6 +21,9 @@ export const ScreenLeft = styled.div`
 export const ScreenLeftImg = styled.div`
   margin: 1rem;
   flex: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media screen and (max-width: 960px) {
     flex: 1;
   }
@@ -28,6 +31,7 @@ export const ScreenLeftImg = styled.div`
 
 export const LeftImg = styled.img`
   max-width: 500px;
+
   @media screen and (max-width: 600px) {
     max-width: 70%;
   }
